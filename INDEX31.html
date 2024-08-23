@@ -1,0 +1,326 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<title>JavaScript Exercises</title>  
+<style>  
+    table {  
+      border-collapse: collapse;  
+      width: 50%;  
+      margin: 20px auto;  
+    }  
+  
+    th, td {  
+      text-align: left;  
+      padding: 8px;  
+      border: 1px solid #ddd;  
+    }  
+  
+    th {  
+      background-color: #f2f2f2;  
+    }  
+  
+    h2 {  
+      text-align: center;  
+      margin-bottom: 20px;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <a href="index2.html">page1</a>
+<h1>JavaScript Exercises</h1>  
+
+<script>  
+  // 1. City of Lights  
+  let city = prompt("Enter city name:");  
+  if (city === "Karachi") {  
+    alert("Welcome to city of lights");  
+  }  
+
+  // 2. Gender Greeting  
+  let gender = prompt("Enter your gender (male/female):");  
+  if (gender === "male") {  
+    alert("Good Morning Sir");  
+  } else if (gender === "female") {  
+    alert("Good Morning Ma'am");  
+  } else {  
+    alert("Invalid input.");  
+  }  
+
+  // 3. Traffic Signal  
+  let signalColor = prompt("Enter traffic signal color (Red/Yellow/Green):");  
+  switch (signalColor) {  
+    case "Red":  
+      alert("Must Stop");  
+      break;  
+    case "Yellow":  
+      alert("Ready to move");  
+      break;  
+    case "Green":  
+      alert("Move now");  
+      break;  
+    default:  
+      alert("Invalid color.");  
+  }  
+
+  // 4. Fuel Check  
+  let fuel = parseFloat(prompt("Enter remaining fuel in liters:"));  
+  if (fuel < 0.25) {  
+    alert("Please refill the fuel in your car");  
+  }  
+
+  // 5. Alert Conditions  
+  // a  
+  var a = 4;  
+  if (++a === 5) {  
+    alert("given condition for variable a is true");  
+  } // Alert: given condition for variable a is true  
+
+  // b  
+  var b = 82;  
+  if (b++ === 83) {  
+    alert("given condition for variable b is true");  
+  } // No alert  
+
+  // c  
+  var c = 12;  
+  if (c++ === 13) {  
+    alert("condition 1 is true");  
+  } // Alert: condition 1 is true  
+  if (c === 13) {  
+    alert("condition 2 is true");  
+  } // Alert: condition 2 is true  
+  if (++c < 14) {  
+    alert("condition 3 is true");  
+  } // No alert  
+  if (c === 14) {  
+    alert("condition 4 is true");  
+  } // Alert: condition 4 is true  
+
+  // d  
+  var materialCost = 20000;  
+  var laborCost = 2000;  
+  var totalCost = materialCost + laborCost;  
+  if (totalCost === laborCost + materialCost) {  
+    alert("The cost equals");  
+  } // Alert: The cost equals  
+
+  // e  
+  if (true) {  
+    alert("True");  
+  } // Alert: True  
+  if (false) {  
+    alert("False");  
+  } // No alert  
+
+  // f  
+  if ("car" < "cat") {  
+    alert("car is smaller than cat");  
+  } // Alert: car is smaller than cat (lexicographical comparison)  
+
+  // 6. Marks Calculation and Grade  
+  let subject1Marks = parseInt(prompt("Enter marks for subject 1:"));  
+  let subject2Marks = parseInt(prompt("Enter marks for subject 2:"));  
+  let subject3Marks = parseInt(prompt("Enter marks for subject 3:"));  
+  let totalMark = parseInt(prompt("Enter total marks:"));  
+
+  let obtainedMarks = subject1Marks + subject2Marks + subject3Marks;  
+  let percentages = (obtainedMarks / totalMarks) * 100;  
+
+  let grade;  
+  let remarks;  
+
+  if (percentage >= 90) {  
+    grade = "A+";  
+    remarks = "Excellent";  
+  } else if (percentage >= 80) {  
+    grade = "A";  
+    remarks = "Very Good";  
+  } else if (percentage >= 70) {  
+    grade = "B";  
+    remarks = "Good";  
+  } else if (percentage >= 60) {  
+    grade = "C";  
+    remarks = "Fair";  
+  } else {  
+    grade = "F";  
+    remarks = "Fail";  
+  }  
+
+  document.write(`<h2>Results</h2>`);  
+  document.write(`<p>Total Marks: ${totalMarks}</p>`);  
+  document.write(`<p>Marks Obtained: ${obtainedMarks}</p>`);  
+  document.write(`<p>Percentage: ${percentage.toFixed(2)}%</p>`);  
+  document.write(`<p>Grade: ${grade}</p>`);  
+  document.write(`<p>Remarks: ${remarks}</p>`);  
+</script>  
+    <h1>Arithmetic Operations</h1>  
+    <input type="number" id="numberInput" placeholder="Enter a number" />  
+    <button onclick="calculate()">Calculate</button>  
+    <div id="result"></div>  
+    <script>  
+        function calculate() {  
+            // Get the number from the input field  
+            const inputNumber = parseFloat(document.getElementById('numberInput').value);  
+
+            // Check if the input is a valid number  
+            if (isNaN(inputNumber)) {  
+                document.getElementById('result').innerText = 'Please enter a valid number.';  
+                return;  
+            }  
+
+            // Perform arithmetic operations  
+            const addition = inputNumber + 10;  
+            const subtraction = inputNumber - 5;  
+            const multiplication = inputNumber * 2;  
+            const division = inputNumber / 2;  
+
+            // Display the results  
+            document.getElementById('result').innerHTML = `  
+                <p>Input Number: ${inputNumber}</p>  
+                <p>Addition (number + 10): ${addition}</p>  
+                <p>Subtraction (number - 5): ${subtraction}</p>  
+                <p>Multiplication (number * 2): ${multiplication}</p>  
+                <p>Division (number / 2): ${division}</p>  
+            `;  
+        }  
+    </script>  
+    <h1>JavaScript Variable Calculation</h1>  
+
+    <script>var a = 2, b = 1;  
+        var result = --a - --b + ++b + b--;  
+        
+        console.log("a:", a);  
+        console.log("b:", b); 
+        console.log("result:", result); </script>
+    
+        <h1>question 3</h1>
+        <script>  
+            let name = prompt("Please enter your name:", "Guest");  
+            if (name != null) {  
+              document.write("Hello, " + name + "! Welcome!");  
+            } else {  
+              document.write("Hello, Guest! Welcome!");  
+            }  
+          </script>  
+    
+          <h1>Question 4</h1>
+          <script>  
+            let number = prompt("Enter a number for its multiplication table:", "5");  
+        
+            // Convert to a number, default to 5 if invalid input  
+            number = parseInt(number) || 5;   
+        
+            document.write("<h2>Multiplication Table of " + number + "</h2>");  
+            document.write("<ul>");  
+            for (let i = 1; i <= 10; i++) {  
+              document.write("<li>" + number + " x " + i + " = " + (number * i) + "</li>");  
+            }  
+            document.write("</ul>");  
+          </script> 
+    
+    <h1>Student Marks</h1>  
+
+
+
+<script>  
+  // Get subject names  
+  let subject1 = prompt("Enter the name of the first subject:");  
+  let subject2 = prompt("Enter the name of the second subject:");  
+  let subject3 = prompt("Enter the name of the third subject:");  
+
+  // Total marks per subject  
+  const totalMarks = 100;  
+
+  // Get obtained marks for each subject  
+  let obtainedMarks1 = parseInt(prompt(`Enter obtained marks for ${subject1}:`));  
+  let obtainedMarks2 = parseInt(prompt(`Enter obtained marks for ${subject2}:`));  
+  let obtainedMarks3 = parseInt(prompt(`Enter obtained marks for ${subject3}:`));  
+
+  // Calculate total and percentage  
+  let totalObtained = obtainedMarks1 + obtainedMarks2 + obtainedMarks3;  
+  let percentage = (totalObtained / (totalMarks * 3)) * 100;  
+
+  // Display results in a table  
+  document.write("<h2>Student Marks</h2>");  
+  document.write("<table>");  
+  document.write("<tr><th>Subject</th><th>Total Marks</th><th>Obtained Marks</th></tr>");  
+  document.write(`<tr><td>${subject1}</td><td>${totalMarks}</td><td>${obtainedMarks1}</td></tr>`);  
+  document.write(`<tr><td>${subject2}</td><td>${totalMarks}</td><td>${obtainedMarks2}</td></tr>`);  
+  document.write(`<tr><td>${subject3}</td><td>${totalMarks}</td><td>${obtainedMarks3}</td></tr>`);  
+  document.write(`<tr><td colspan="2"><b>Total Marks</b></td><td><b>${totalObtained}</b></td></tr>`);  
+  document.write(`<tr><td colspan="2"><b>Percentage</b></td><td><b>${percentage.toFixed(2)}%</b></td></tr>`);  
+  document.write("</table>");  
+</script>  
+<script>  
+  // 7. Guess Game  
+  let secretNumber = Math.floor(Math.random() * 10) + 1;  
+  let guessedNumber = parseInt(prompt("Guess a number between 1 and 10:"));  
+
+  if (guessedNumber === secretNumber) {  
+    alert("Bingo! Correct answer");  
+  } else if (guessedNumber + 1 === secretNumber) {  
+    alert("Close enough to the correct answer");  
+  } else {  
+    alert("Incorrect. The secret number was " + secretNumber);  
+  }  
+
+  // 8. Divisible by 3  
+  let numbers = parseInt(prompt("Enter a number:"));  
+  if (number % 3 === 0) {  
+    alert(number + " is divisible by 3");  
+  }  
+
+  // 9. Even or Odd  
+  let input = parseInt(prompt("Enter a number:"));  
+  if (input % 2 === 0) {  
+    alert(input + " is an even number");  
+  } else {  
+    alert(input + " is an odd number");  
+  }  
+
+  // 10. Temperature Check  
+  let temperature = parseInt(prompt("Enter temperature:"));  
+  if (temperature > 40) {  
+    alert("It is too hot outside.");  
+  } else if (temperature > 30) {  
+    alert("The Weather today is Normal.");  
+  } else if (temperature > 20) {  
+    alert("Today's Weather is cool.");  
+  } else if (temperature > 10) {  
+    alert("OMG! Today's weather is so Cool.");  
+  } else {  
+    alert("It's freezing outside!");  
+  }  
+
+  // 11. Calculator  
+  let num1 = parseFloat(prompt("Enter the first number:"));  
+  let num2 = parseFloat(prompt("Enter the second number:"));  
+  let operation = prompt("Enter the operation (+, -, *, /, %):");  
+
+  let result;  
+  if (operation === "+") {  
+    result = num1 + num2;  
+  } else if (operation === "-") {  
+    result = num1 - num2;  
+  } else if (operation === "*") {  
+    result = num1 * num2;  
+  } else if (operation === "/") {  
+    if (num2 === 0) {  
+      alert("Cannot divide by zero.");  
+      result = undefined;  
+    } else {  
+      result = num1 / num2;  
+    }  
+  } else if (operation === "%") {  
+    result = num1 % num2;  
+  } else {  
+    alert("Invalid operation.");  
+    result = undefined;  
+  }  
+
+  if (result !== undefined) {  
+    alert("Result: " + result);  
+  }  
+</script>  
+</body>  
+</html>
